@@ -1,0 +1,30 @@
+body {
+  font-family: 'Amatic SC', sans-serif;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+
+.homepage-section {
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.homepage-section * {
+  margin-left: 20px;
+  margin-right: 20px;
+}
