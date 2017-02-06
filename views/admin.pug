@@ -2,4 +2,7 @@ extends layout
 
 block content
 
-  h1 HEY HEY HEY I'M AN ADMIN
+  if authorized
+    h1 hey!
+  else
+    p you must have admin access

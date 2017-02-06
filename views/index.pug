@@ -3,24 +3,18 @@ extends layout
 block content
 
   .homepage-section
-    h1 Funny Bone
+    .homepage-body-header
+      h1 Funny Bone
 
   .homepage-section
     include navbar.pug
 
   .homepage-section
-    .homepage-image
-      img(src="")
-    .homepage-image
-      img(src="")
-    .homepage-button
-      a(href="#") Enter
-    .homepage-text
-      p we are two queer babies committed to a bromance stitched together by florals, good snacks and choosing joy.
-    .homepage-image
-      img(src="")
-    .homepage-image
-      img(src="")
+    .homepage-body-content
+      .homepage-image
+        img(src="http://placehold.it/250x250")
+      .homepage-image
+        img(src="http://placehold.it/250x250")
 
   .homepage-section
     include footer.pug
