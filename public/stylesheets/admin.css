@@ -1,0 +1,53 @@
+body {
+  font-family: 'Amatic SC', sans-serif;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+}
+
+.footer button {
+  width: 100px;
+  height: 40px;
+  border: 1px black solid;
+  color: white;
+  font-family: 'Amatic SC', sans-serif;
+  font-size: 24px;
+  background-color: black;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+
+.homepage-section {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-body-content {
+  display: inline-flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.homepage-body-header {
+  font-size: 2em;
+}
+
+.homepage-section * {
+  margin-left: 20px;
+  margin-right: 20px;
+}
