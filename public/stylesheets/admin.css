@@ -1,0 +1,154 @@
+body {
+  font-family: 'Amatic SC', sans-serif;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+}
+
+.footer button {
+  width: 100px;
+  height: 40px;
+  border: 1px black solid;
+  color: white;
+  font-family: 'Amatic SC', sans-serif;
+  font-size: 24px;
+  background-color: black;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+
+.homepage-section {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-body-content {
+  display: inline-flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.homepage-body-header {
+  font-size: 2em;
+}
+
+.homepage-section * {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.tabs {
+  width: 100%;
+  display:inline-block;
+}
+
+.tab-links:after {
+  display:block;
+  clear:both;
+  content:'';
+}
+
+.tab-links li {
+  margin:0px 5px;
+  float:left;
+  list-style:none;
+}
+
+.tab-links a {
+  padding:9px 15px;
+  display:inline-block;
+  border-radius:3px 3px 0px 0px;
+  background:#7FB5DA;
+  font-size:16px;
+  font-weight:600;
+  color:#4c4c4c;
+  transition:all linear 0.15s;
+}
+
+.tab-links a:hover {
+  background:#a7cce5;
+  text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+  background:#fff;
+  color:#4c4c4c;
+}
+
+.tab-content {
+  padding:15px;
+  border-radius:3px;
+  box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+  background:#fff;
+}
+
+.tab {
+  display:none;
+}
+
+.tab.active {
+  display:block;
+}
+
+.create-inventory {
+  display: flex;
+  justify-content: space-between;
+}
+
+form {
+  max-width: 100%;
+}
+
+.inventory-input {
+  font-family: 'Droid Sans', helvetica , sans-serif;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  text-indent: 5px;
+  width: 70%;
+  height: 2rem;
+  background: #ecf0f1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  margin: 2%;
+  padding: 1%;
+}
+
+.submit-inventory {
+  font-family: 'Droid Sans', helvetica , sans-serif;
+  background-color: #ecf0f1;
+  height: 2em;
+  font: 1.5em;
+  width: 50%;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  margin: 2%;
+  padding: 2%;
+}
+
+.submit-inventory:hover {
+  background-color: #5cb85c;
+  color: #fff;
+}
