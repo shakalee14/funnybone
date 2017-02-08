@@ -1,19 +1,16 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
+const db = require('../database/db')
 
-router.get('/', function(request, response){
-  request.url < 2 ? response.render('admin') : response.redirect('/loggedout')
+router.post('/', function(request, response){
+  let { name, description, available, quantity, img } = request.body
+  db.createInventoryItem( name, description, available, quantity, img)
+  .then( response.render('admin'))
 })
 
 router.get('/login', function(request, response){
   response.render('login', { message: request.flash('loginMessage')})
-})
-
-router.get('/inventory', isLoggedIn, function(request, response){
-  response.render('inventory', {
-    user: request.user
-  })
 })
 
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email']}))

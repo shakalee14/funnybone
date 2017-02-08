@@ -8,13 +8,9 @@ const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth').Strategy
 const admin = require('./routes/admin.js')
 const routes = require('./routes/index.js')
-const mongoose = require('mongoose');
-const flash = require('connect-flash');
+const flash    = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const session = require('express-session')
-
-const configDB = require('./config/database.js');
-mongoose.createConnection(configDB.url);
 
 app.use(morgan('dev'));
 app.use(cookieParser());
