@@ -20,7 +20,17 @@ const displayInventoryItems = function(){
   return db.any(sql)
 }
 
+const archiveItem = function(id){
+  const sql = `
+    UPDATE inventory
+    SET available=false
+    WHERE id=$1
+  `
+  return db.none(sql, [id])
+}
+
 module.exports = {
-  createInventoryItem: createInventoryItem,
-  displayInventoryItems: displayInventoryItems
+  createInventoryItem,
+  displayInventoryItems,
+  archiveItem
 }
