@@ -3,14 +3,31 @@ const router = express.Router()
 const passport = require('passport')
 const db = require('../database/db')
 
+router.get('/', function(request, response){
+  console.log('ADMIN');
+  db.displayInventoryItems()
+    .then( results =>  response.render('admin', {results}))
+})
+
 router.post('/', function(request, response){
   const { name, description, available, quantity, img } = request.body
-  db.createInventoryItem( request.body )
-    .then( db.displayInventoryItems()
-      .then( results => {
-        response.render('admin', {results})
-      })
-    )
+  db.createInventoryItem( name, description, available, quantity, img)
+  .then( db.displayInventoryItems()
+    .then( results =>  response.render('admin', {results}))
+  )
+})
+
+router.post('/edit/:id', function(request, response){
+  const { name, description, available, quantity, img } = request.body
+  const { id } = request.params
+  db.updateItem(name, description, available, quantity, img, id)
+    .then( results =>  response.redirect(`/admin/details/${id}`))
+})
+
+router.get('/details/:id', function(request, response){
+  const { id }  = request.params
+  db.getItemDetailsById(id)
+    .then( result => response.render('item', {result}))
 })
 
 router.get('/login', function(request, response){

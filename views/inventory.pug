@@ -10,7 +10,7 @@ block content
     form(method='GET', action='/search')
       input(type='text' placeholder='Apparel...')
 
-  .section
+  .section-inventory
     ul
       for result in results
         li
@@ -18,3 +18,13 @@ block content
             a(href="#")
               img(class="inventory-pic" src=`./images/inventorypic/${result.img}`)
             p #{result.name}
+            img(class="inventory-pic" src=`./images/inventorypic/${result.img}`)
+            p #{result.name}
+            .details(data-id=`${result.id}`) details
+        .inventory-details-modal(data-id=`${result.id}`)
+          h1 #{result.name}
+          p #{result.description}
+          img(class="inventory-pic-modal" src=`./images/inventorypic/${result.img}`)
+          p #{result.quantity} currently available
+          a(href=`mailto:funnybonedesign@gmail.com?subject=Inquiring about ${result.name}`) Email Us
+          p.close X
