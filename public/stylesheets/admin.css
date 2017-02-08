@@ -54,8 +54,8 @@ body {
 }
 
 .tabs {
-  width:100%;
-  display:inline-block;
+  width: 100%;
+  display: inline-block;
 }
 
 .tab-links:after {
@@ -104,4 +104,52 @@ li.active a, li.active a:hover {
 
 .tab.active {
   display:block;
+}
+<<<<<<< HEAD
+=======
+
+.create-inventory {
+  display: flex;
+  justify-content: space-between;
+}
+
+form {
+  max-width: 100%;
+}
+
+.inventory-input {
+  font-family: 'Droid Sans', helvetica , sans-serif;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  text-indent: 5px;
+  width: 70%;
+  height: 2rem;
+  background: #ecf0f1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  margin: 2%;
+  padding: 1%;
+}
+
+.submit-inventory {
+  font-family: 'Droid Sans', helvetica , sans-serif;
+  background-color: #ecf0f1;
+  height: 2em;
+  font: 1.5em;
+  width: 50%;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  margin: 2%;
+  padding: 2%;
+}
+
+.submit-inventory:hover {
+  background-color: #5cb85c;
+  color: #fff;
 }

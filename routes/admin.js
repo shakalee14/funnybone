@@ -4,9 +4,13 @@ const passport = require('passport')
 const db = require('../database/db')
 
 router.post('/', function(request, response){
-  let { name, description, available, quantity, img } = request.body
-  db.createInventoryItem( name, description, available, quantity, img)
-  .then( response.render('admin'))
+  const { name, description, available, quantity, img } = request.body
+  db.createInventoryItem( request.body )
+    .then( db.displayInventoryItems()
+      .then( results => {
+        response.render('admin', {results})
+      })
+    )
 })
 
 router.get('/login', function(request, response){

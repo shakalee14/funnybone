@@ -1,0 +1,53 @@
+* {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.inventory-item {
+  text-align: center;
+}
+
+.inventory-pic {
+  height: 450px;
+  width: 450px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.inventory-pic:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+
+}
+
+input {
+  font-family: 'Droid Sans', helvetica , sans-serif;
+  border: none;
+  outline: none;
+  color: grey;
+  font-weight: lighter;
+  font-size: 1rem;
+  text-indent: 5px;
+  width: 70%;
+  height: 2rem;
+  background: #ecf0f1;
+  margin: 2%;
+  padding: 1%;
+}

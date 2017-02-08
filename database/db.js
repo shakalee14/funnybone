@@ -1,4 +1,5 @@
-const pgp = require('pg-promise')
+const pgp = require('pg-promise')()
+const env = require('dotenv').config()
 const connectionString = process.env.connectionString
 const db = pgp(connectionString)
 
