@@ -2,4 +2,18 @@ extends layout
 
 block content
 
-  h1 HEY HEY HEY
+  .homepage-section
+    .homepage-body-header
+      h1 Funny Bone
+
+  .homepage-section
+    include navbar.pug
+  .homepage-section
+    .homepage-body-content
+      .homepage-image
+        img(src="http://placehold.it/250x250")
+      .homepage-image
+        img(src="http://placehold.it/250x250")
+
+  .homepage-section
+    include footer.pug
