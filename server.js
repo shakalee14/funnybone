@@ -11,6 +11,7 @@ const routes = require('./routes/index.js')
 const flash = require('connect-flash')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
+const env = require('dotenv').config()
 
 app.use(morgan('dev'))
 app.use(cookieParser())

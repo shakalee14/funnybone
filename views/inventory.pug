@@ -2,4 +2,19 @@ extends layout
 
 block content
 
-  h1 inventory page
+  .section
+    include navbar.pug
+  .section
+    h1 Current Inventory
+
+    form(method='GET', action='/search')
+      input(type='text' placeholder='Apparel...')
+
+  .section
+    ul
+      for result in results
+        li
+          .inventory-item
+            a(href="#")
+              img(class="inventory-pic" src=`./images/inventorypic/${result.img}`)
+            p #{result.name}
