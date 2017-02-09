@@ -4,16 +4,12 @@ block content
 
   .tabs
     ul.tab-links
-      li.active
-        a(href='#inquries') Inquiries
       li
         a(href='#currentInventory') Current Inventory
       li
         a(href='#newInventory') Add Inventory
     .tab-content
-      #inquries.tab.active
-        p Tab #1 content goes here!
-      #currentInventory.tab
+      #currentInventory.tab.active
         include adminInventory.pug
       #newInventory.tab
         include inventoryform.pug

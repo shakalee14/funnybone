@@ -83,17 +83,25 @@ input {
   height: 1000px;
   background: #fff;
   box-shadow: 0 0 0 1000em rgba(0,0,0,.5);
-  z-index: 10;
 }
 
 .inventory-details-modal.active {
   display: block;
-  z-index: 10;
 }
 
 .inventory-details-modal.close {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 10;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.close:hover {
+  text-decoration: underline;
+  font-size: 110%;
 }

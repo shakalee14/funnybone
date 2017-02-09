@@ -44,9 +44,10 @@ const updateItem = function(name, description, available, quantity, img, id){
     available=$3,
     quantity=$4,
     img=$5
-    WHERE id=$6;
+    WHERE id=$6
+    RETURNING *;
   `
-  return db.one(sql, [name, description, available, quantity, img, id])
+  return db.any(sql, [name, description, available, quantity, img, id])
 }
 
 module.exports = {
