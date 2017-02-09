@@ -20,6 +20,13 @@ const displayInventoryItems = function(){
   return db.any(sql)
 }
 
+const getItemDetailsById = function(id){
+  const sql = `
+    SELECT * FROM inventory WHERE id=$1;
+  `
+  return db.one(sql, [id])
+}
+
 const archiveItem = function(id){
   const sql = `
     UPDATE inventory
@@ -32,5 +39,6 @@ const archiveItem = function(id){
 module.exports = {
   createInventoryItem,
   displayInventoryItems,
-  archiveItem
+  archiveItem,
+  getItemDetailsById
 }

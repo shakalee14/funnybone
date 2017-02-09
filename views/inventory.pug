@@ -15,6 +15,12 @@ block content
       for result in results
         li
           .inventory-item
-            a(href="#")
-              img(class="inventory-pic" src=`./images/inventorypic/${result.img}`)
+            img(class="inventory-pic" src=`./images/inventorypic/${result.img}`)
             p #{result.name}
+            form(method='GET', action=`/apparel/details`)
+              input(type='submit' value='details')
+          .inventory-details-modal
+            h1 #{result.name}
+            p #{result.description}
+            p #{result.quantity} currently available
+            p.close X

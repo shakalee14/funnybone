@@ -24,6 +24,14 @@ router.get('/apparel', function(request, response){
   })
 })
 
+router.get('/apparel/details', function(request, response){
+  let id = request.body.id
+  db.getItemDetailsById(id)
+  .then( result => {
+    response.json(result)
+  })
+})
+
 router.post('/archive/:id', function(request, response){
   let id = request.params.id
   db.archiveItem(id)
