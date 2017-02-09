@@ -8,7 +8,16 @@ $(document).ready(function() {
   });
 
   $('.details').on('click', function(event) {
+    event.preventDefault();
+    var currentItem = $(this).attr('data-id')
+
     $('body').toggleClass('prevent');
-    $('.inventory-details-modal').toggleClass('active');
+    $(".inventory-details-modal[data-id=" + currentItem +"]").addClass('active');
+  })
+
+  $('.close').on('click', function(event) {
+    event.preventDefault();
+    console.log('hey hey hey')
+    $('.inventory-details-modal').removeClass('active');
   })
 });

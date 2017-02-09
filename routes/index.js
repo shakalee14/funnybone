@@ -38,7 +38,4 @@ router.post('/archive/:id', function(request, response){
   .then( response.redirect('/'))
 })
 
-
-
-
 module.exports = router

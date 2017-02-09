@@ -36,9 +36,23 @@ const archiveItem = function(id){
   return db.none(sql, [id])
 }
 
+const updateItem = function(name, description, available, quantity, img, id){
+  const sql = `
+    UPDATE inventory
+    SET name=$1,
+    description=$2,
+    available=$3,
+    quantity=$4,
+    img=$5
+    WHERE id=$6;
+  `
+  return db.one(sql, [name, description, available, quantity, img, id])
+}
+
 module.exports = {
   createInventoryItem,
   displayInventoryItems,
   archiveItem,
-  getItemDetailsById
+  getItemDetailsById,
+  updateItem
 }

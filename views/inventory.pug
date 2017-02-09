@@ -17,10 +17,10 @@ block content
           .inventory-item
             img(class="inventory-pic" src=`./images/inventorypic/${result.img}`)
             p #{result.name}
-            form(method='GET', action=`/apparel/details`)
-              input(type='submit' value='details')
-          .inventory-details-modal
-            h1 #{result.name}
-            p #{result.description}
-            p #{result.quantity} currently available
-            p.close X
+            .details(data-id=`${result.id}`) details
+        .inventory-details-modal(data-id=`${result.id}`)
+          h1 #{result.name}
+          p #{result.description}
+          p #{result.quantity} currently available
+          a(href=`mailto:funnybonedesign@gmail.com?subject=Inquiring about ${result.name}`) Email Us
+          p.close X

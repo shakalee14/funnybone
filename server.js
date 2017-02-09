@@ -26,7 +26,7 @@ const GOOGLE_CLIENT_ID = '197695806879-8rtcu8gb9joo2ob3tg28rs2nqf9k8vkm.apps.goo
 const GOOGLE_CLIENT_SECRET = '_btkQ7Z65MV3YmRtCbn5CfIF'
 
 app.set('view engine', 'pug')
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', routes)
 app.use('/admin', admin)
 
