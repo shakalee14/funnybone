@@ -16,13 +16,12 @@ router.post('/edit/:id', function(request, response){
   const id = request.params.id
   db.updateItem(name, description, available, quantity, img, id)
     .then( db.displayInventoryItems()
-      .then( results =>  response.redirect('admin/details/:id'))
+      .then( results =>  response.redirect(`/admin/details/${id}`))
     )
 })
 
-router.get('/details/:id', function(request,response){
+router.get('/details/:id', function(request, response){
   const id = request.params.id
-  console.log('ID!', id);
   db.getItemDetailsById(id)
     .then( result => response.render('item', {result}))
 })
