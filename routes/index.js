@@ -15,6 +15,7 @@ router.get('/all', function(request, response){
     .then( results => {
       response.render('inventory', {results})
     })
+})
 
 
 router.get('/apparel', function(request, response){
