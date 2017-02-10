@@ -4,17 +4,10 @@ const passport = require('passport')
 const db = require('../database/db.js')
 
 router.get('/', function(request, response){
-  if( request.url.length > 40 ){
-    db.displayInventoryItems()
-      .then( results => {
-        response.render('admin', {results})
-      })
-  } else {
-    db.displayInventoryItems()
-      .then( results => {
-        response.render('index', {results})
-      })
-    }
+  db.displayInventoryItems()
+    .then( results => {
+      response.render('index', {results})
+    })
 })
 
 router.get('/all', function(request, response){
@@ -22,7 +15,7 @@ router.get('/all', function(request, response){
     .then( results => {
       response.render('inventory', {results})
     })
-})
+
 
 router.get('/apparel', function(request, response){
   db.displayItemsByCategory('thread')
@@ -39,15 +32,15 @@ router.get('/art', function(request, response){
 })
 
 router.get('/apparel/details', function(request, response){
-  let id = request.body.id
+  const { id }  = request.body
   db.getItemDetailsById(id)
-  .then( result => {
-    response.json(result)
-  })
+    .then( result => {
+      response.json(result)
+    })
 })
 
 router.post('/archive/:id', function(request, response){
-  let id = request.params.id
+  const { id } = request.params
   db.archiveItem(id)
   .then( response.redirect('/'))
 })
