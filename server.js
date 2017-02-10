@@ -7,10 +7,13 @@ const pug = require('pug')
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth').Strategy
 const flash = require('connect-flash')
+const router = express.Router
 
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const env = require('dotenv').config()
+
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(morgan('dev'))
 app.use(cookieParser())
@@ -27,13 +30,14 @@ app.use(flash())
 
 const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
 const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
+
 app.use(morgan('dev'))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(cookieParser())
-app.use(bodyParser())
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
-app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', index)
 app.use('/admin', admin)
