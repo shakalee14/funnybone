@@ -51,10 +51,24 @@ const updateItem = function(name, description, available, quantity, img, id){
   return db.any(sql, [name, description, available, quantity, img, id])
 }
 
+const searchItem = function(searchItem) {
+  const term = searchItem.toLowerCase()
+  const sql = `
+    SELECT *
+    FROM inventory
+    WHERE lower(name)
+    LIKE '%${term}%'
+    OR lower(description)
+    LIKE '%${term}%'
+  `
+  return db.any( sql )
+}
+
 module.exports = {
   createInventoryItem,
   displayInventoryItems,
   archiveItem,
   getItemDetailsById,
-  updateItem
+  updateItem,
+  searchItem
 }
