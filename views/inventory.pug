@@ -15,9 +15,6 @@ block content
       for result in results
         li
           .inventory-item
-            a(href="#")
-              img(class="inventory-pic" src=`./images/inventorypic/${result.img}`)
-            p #{result.name}
             img(class="inventory-pic" src=`./images/inventorypic/${result.img}`)
             p #{result.name}
             .details(data-id=`${result.id}`) details
