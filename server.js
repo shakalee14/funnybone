@@ -21,7 +21,6 @@ app.use(flash())
 
 const GOOGLE_CLIENT_ID = '197695806879-8rtcu8gb9joo2ob3tg28rs2nqf9k8vkm.apps.googleusercontent.com'
 const GOOGLE_CLIENT_SECRET = '_btkQ7Z65MV3YmRtCbn5CfIF'
-app.use(morgan('dev'))
 app.use(cookieParser())
 app.use(bodyParser())
 
