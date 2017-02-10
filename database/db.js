@@ -21,7 +21,40 @@ const displayInventoryItems = function(){
   return db.any(sql)
 }
 
+const getItemDetailsById = function(id){
+  const sql = `
+    SELECT * FROM inventory WHERE id=$1;
+  `
+  return db.one(sql, [id])
+}
+
+const archiveItem = function(id){
+  const sql = `
+    UPDATE inventory
+    SET available=false
+    WHERE id=$1
+  `
+  return db.none(sql, [id])
+}
+
+const updateItem = function(name, description, available, quantity, img, id){
+  const sql = `
+    UPDATE inventory
+    SET name=$1,
+    description=$2,
+    available=$3,
+    quantity=$4,
+    img=$5
+    WHERE id=$6
+    RETURNING *;
+  `
+  return db.any(sql, [name, description, available, quantity, img, id])
+}
+
 module.exports = {
-  createInventoryItem: createInventoryItem,
-  displayInventoryItems: displayInventoryItems
+  createInventoryItem,
+  displayInventoryItems,
+  archiveItem,
+  getItemDetailsById,
+  updateItem
 }

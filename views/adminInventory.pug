@@ -1,0 +1,35 @@
+extends layout
+
+block content
+
+  .section
+    include navbar.pug
+  .section
+    h1 Current Inventory
+
+    form(method='GET', action='/search')
+      input(type='text' placeholder='Apparel...')
+
+  .section
+    ul
+      for result in results
+        li
+          .inventory-item
+            img(class="inventory-pic" src=`./images/inventorypic/${result.img}`)
+            p #{result.name}
+            .details(data-id=`${result.id}`) details
+        .inventory-details-modal(data-id=`${result.id}`)
+          h1 #{result.name}
+          form(method='POST', action=`/admin/edit/${result.id}`)
+            p Name
+            input(type='text' value=`${result.name}` name='name')
+            p Description
+            input(type='text' value=`${result.description}` name='description')
+            p Available
+            input(type='text' value=`${result.available}` checked='checked' name='available')
+            p Quantity
+            input(type='text' value=`${result.quantity}` name='quantity')
+            p Image
+            input(type='text' value=`${result.img}` name='img')
+            input(type='submit' value='Submit')
+          .close Close
