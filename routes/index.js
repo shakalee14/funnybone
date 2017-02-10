@@ -17,10 +17,24 @@ router.get('/', function(request, response){
     }
 })
 
-router.get('/apparel', function(request, response){
+router.get('/all', function(request, response){
   db.displayInventoryItems()
+    .then( results => {
+      response.render('inventory', {results})
+    })
+})
+
+router.get('/apparel', function(request, response){
+  db.displayItemsByCategory('thread')
   .then( results => {
-    response.render('inventory', {results})
+    response.render('threads', {results})
+  })
+})
+
+router.get('/art', function(request, response){
+  db.displayItemsByCategory('art')
+  .then( results => {
+    response.render('art', {results})
   })
 })
 
