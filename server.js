@@ -31,6 +31,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', index)
 app.use('/admin', admin)
 
-app.listen(2782, function(){
+app.listen(process.env.PORT || 2782, function(){
   console.log('listening on port 2782')
 })
