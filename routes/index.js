@@ -24,6 +24,14 @@ router.get('/apparel', function(request, response){
   })
 })
 
+router.get('/contact', function(request, response){
+  response.render('contact')
+})
+
+router.get('/about', function(request, response){
+  response.render('about')
+})
+
 router.get('/apparel/details', function(request, response){
   let id = request.body.id
   db.getItemDetailsById(id)
