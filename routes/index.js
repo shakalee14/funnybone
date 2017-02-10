@@ -38,4 +38,11 @@ router.post('/archive/:id', function(request, response){
   .then( response.redirect('/'))
 })
 
+router.get('/search', function(request, response){
+  const { searchItem } = request.query
+  db.searchItem(searchItem)
+    .then( results => response.render('inventory', {results}))
+    .catch(error => response.render('inventory', {message: 'no items match search'}))
+})
+
 module.exports = router
