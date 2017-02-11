@@ -1,7 +1,10 @@
 extends layout
 
 block content
-  
+
+  .section
+    include navbar.pug
+
   .section
     include searchform.pug
 
@@ -18,7 +21,7 @@ block content
           .inventory-details-modal(data-id=`${result.id}`)
             h1 #{result.name}
             p #{result.description}
-            p #{result.cost}
+            p $ #{result.cost}
             img(class="inventory-pic-modal" src=`./images/inventorypic/${result.img}`)
             p #{result.quantity} currently available
             a(href=`mailto:funnybonedesign@gmail.com?subject=Inquiring about ${result.name}`) Email Us

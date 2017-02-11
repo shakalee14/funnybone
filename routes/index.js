@@ -4,10 +4,7 @@ const passport = require('passport')
 const db = require('../database/db.js')
 
 router.get('/', function(request, response){
-  db.displayInventoryItems()
-    .then( results => {
-      response.render('index', {results})
-    })
+  response.render('index')
 })
 
 router.get('/all', function(request, response){
@@ -17,6 +14,13 @@ router.get('/all', function(request, response){
     })
 })
 
+router.get('/about', function(request, response){
+  response.render('about')
+})
+
+router.get('/contact', function(request, response){
+  response.render('contact')
+})
 
 router.get('/apparel', function(request, response){
   db.displayItemsByCategory('thread')

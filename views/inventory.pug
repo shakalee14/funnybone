@@ -7,11 +7,20 @@ block content
   .section
     h1 Current Inventory
 
-    a(href='/apparel') Hats
-
-    a(href='/art') Art
-
-    for result in results
-
-      ul
+    ul
+      for result in results
+        li
+          img(class="inventory-pic" src=`/images/inventorypic/${result.img}`)
         li=result.name
+        li=result.description
+        li=result.quantity
+        .details(class='details-inventory-all' data-id=`${result.id}`) details
+
+        .inventory-details-modal(data-id=`${result.id}`)
+          h1 #{result.name}
+          p #{result.description}
+          p $ #{result.cost}
+          img(class="inventory-pic-modal" src=`./images/inventorypic/${result.img}`)
+          p #{result.quantity} currently available
+          a(href=`mailto:funnybonedesign@gmail.com?subject=Inquiring about ${result.name}`) Email Us
+          p.close X
