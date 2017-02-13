@@ -63,9 +63,10 @@ input {
   padding: 1%;
 }
 
-.details {
+.details, .details-inventory-all {
   border: none;
   outline: none;
+  margin: 20px 170px;
   color: white;
   font-size: 24px;
   text-indent: 5px;
@@ -76,12 +77,12 @@ input {
 .inventory-details-modal {
   display: none;
   position: fixed;
-  padding: 10px;
+  padding: 50px;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   width: 400px;
-  height: 700px;
+  height: 600px;
   background: #fff;
   box-shadow: 0 0 0 1000em rgba(0,0,0,.5);
 }

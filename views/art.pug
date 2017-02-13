@@ -19,10 +19,4 @@ block content
               p #{result.name}
               .details(data-id=`${result.id}`) details
           .inventory-details-modal(data-id=`${result.id}`)
-            h1 #{result.name}
-            p #{result.description}
-            p $ #{result.cost}
-            img(class="inventory-pic-modal" src=`./images/inventorypic/${result.img}`)
-            p #{result.quantity} currently available
-            a(href=`mailto:funnybonedesign@gmail.com?subject=Inquiring about ${result.name}`) Email Us
-            p.close X
+            include details-modal.pug

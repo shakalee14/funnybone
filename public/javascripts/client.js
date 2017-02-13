@@ -17,7 +17,7 @@ $(document).ready(function() {
 
   $('.close').on('click', function(event) {
     event.preventDefault();
-    console.log('hey hey hey')
+
     $('.inventory-details-modal').removeClass('active');
   })
 });
