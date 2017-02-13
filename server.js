@@ -42,6 +42,8 @@ app.set('view engine', 'pug')
 app.use('/', index)
 app.use('/admin', admin)
 
-app.listen(2782, function(){
+const server = app.listen(2782, function(){
   console.log('listening on port 2782')
 })
+
+module.exports = server
