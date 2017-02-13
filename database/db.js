@@ -4,14 +4,14 @@ const CONNECTION_STRING = process.env.NODE_ENV === 'production'
   : `postgres://${process.env.USER}@localhost:5432/funnybone`
 const db = pgp(CONNECTION_STRING)
 
-const createInventoryItem = function( name, description, available, quantity, img ){
+const createInventoryItem = function(name, description, category, cost, size, available, quantity, img){
   const sql = `
   INSERT INTO inventory
-    (name, description, available, quantity, img)
+    (name, description, category, cost, size, available, quantity, img)
   values
-    ($1, $2, $3, $4, $5)
+    ($1, $2, $3, $4, $5, $6, $7, $8)
   `
-  return db.any(sql, [name, description, available, quantity, img])
+  return db.any(sql, [name, description, category, cost, size, available, quantity, img])
 }
 
 const displayInventoryItems = function(){
@@ -38,18 +38,22 @@ const archiveItem = function(id){
   return db.none(sql, [id])
 }
 
-const updateItem = function(name, description, available, quantity, img, id){
+const updateItem = function(name, description, category, cost, size, available, quantity, img, id){
   const sql = `
     UPDATE inventory
     SET name=$1,
     description=$2,
-    available=$3,
-    quantity=$4,
-    img=$5
-    WHERE id=$6
+    category=$3,
+    cost=$4,
+    size=$5,
+    available=$6,
+    quantity=$7,
+    img=$8
+    WHERE id=$9
     RETURNING *;
   `
-  return db.any(sql, [name, description, available, quantity, img, id])
+
+  return db.any(sql, [name, description, category, cost, size, available, quantity, img, id])
 }
 
 module.exports = {
