@@ -22,6 +22,21 @@ const displayInventoryItems = function(){
   return db.any(sql)
 }
 
+const displayAllInventoryItems = function(){
+  const sql = `
+    SELECT * FROM inventory
+  `
+  return db.any(sql)
+}
+
+const displayItemsByCategory = function(category){
+  const sql = `
+    SELECT * FROM inventory
+    WHERE category=$1
+  `
+  return db.any(sql, [category])
+}
+
 const getItemDetailsById = function(id){
   const sql = `
     SELECT * FROM inventory WHERE id=$1;
@@ -61,5 +76,8 @@ module.exports = {
   displayInventoryItems,
   archiveItem,
   getItemDetailsById,
-  updateItem
+  updateItem,
+  searchItem,
+  displayItemsByCategory,
+  displayAllInventoryItems
 }

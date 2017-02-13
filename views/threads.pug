@@ -2,14 +2,18 @@ extends layout
 
 block content
 
+  .section-threads
+    .threads-body-header
+      h1 Funny Bone
+
   .section
     include navbar.pug
+
   .section
-    h1 All Inventory
+    include searchform.pug
 
-    form(method='GET', action='/search')
-      input(type='text' placeholder='Looking for...')
-
+  .section
+    p=message
   .section-inventory
     ul
       for result in results

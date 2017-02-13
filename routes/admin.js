@@ -4,8 +4,14 @@ const passport = require('passport')
 const db = require('../database/db')
 
 router.get('/', function(request, response){
-  db.displayInventoryItems()
-    .then( results =>  response.render('admin', {results}))
+  if(request.url.length > 40 ){
+    db.displayInventoryItems()
+      .then( results => {
+        response.render('admin', {results})
+      })
+  } else {
+    response.redirect('/loggedout')
+  }
 })
 
 router.post('/', function(request, response){
