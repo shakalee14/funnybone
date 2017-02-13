@@ -6,9 +6,9 @@ const db = require('../database/db')
 router.get('/', function(request, response){
   if(request.url.length > 40 ){
     db.displayInventoryItems()
-    .then( results => {
-      response.render('admin', {results})
-    })
+      .then( results => {
+        response.render('admin', {results})
+      })
   } else {
     response.redirect('/loggedout')
   }
@@ -16,16 +16,32 @@ router.get('/', function(request, response){
 
 router.post('/', function(request, response){
   const { name, description, available, quantity, img } = request.body
+
   db.createInventoryItem( request.body )
     .then( db.displayInventoryItems()
       .then( results => {
-        response.render('admin', {results})
+        response.redirect('/', {results})
       })
     )
 })
 
+router.post('/edit/:id', function(request, response){
+  const { name, description, available, quantity, img } = request.body
+  const { id } = request.params
+
+  db.updateItem(name, description, available, quantity, img, id)
+    .then( result =>  response.render('item', {result}))
+})
+
+router.get('/details/:id', function(request, response){
+  const { id } = request.params
+
+  db.getItemDetailsById(id)
+    .then( result => response.render('item'))
+})
+
 router.get('/login', function(request, response){
-  response.render('login', { message: request.flash('loginMessage')})
+  response.render('login')
 })
 
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email']}))

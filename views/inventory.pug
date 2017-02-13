@@ -6,12 +6,16 @@ block content
     include navbar.pug
   .section
     h1 Current Inventory
+    h2=message
 
-    a(href='/apparel') Hats
-
-    a(href='/art') Art
-
-    for result in results
-
-      ul
+    ul
+      for result in results
+        li
+          img(class="inventory-pic" src=`/images/inventorypic/${result.img}`)
         li=result.name
+        li=result.description
+        li=result.quantity
+        .details(class='details-inventory-all' data-id=`${result.id}`) details
+
+        .inventory-details-modal(data-id=`${result.id}`)
+          include details-modal.pug

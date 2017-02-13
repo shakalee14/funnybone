@@ -20,6 +20,12 @@ body {
   background-color: black;
 }
 
+.section-about, .section-contact {
+  font-size: 30px;
+  text-align: center;
+  display: block;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;

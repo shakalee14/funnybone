@@ -76,7 +76,7 @@ const searchItem = function(searchItem) {
     OR lower(description)
     LIKE '%${term}%'
   `
-  return db.any( sql )
+  return db.any(sql)
 }
 
 module.exports = {
