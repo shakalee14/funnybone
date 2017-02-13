@@ -37,6 +37,19 @@ const displayItemsByCategory = function(category){
   return db.any(sql, [category])
 }
 
+const searchItem = function(searchItem) {
+  const term = searchItem.toLowerCase()
+  const sql = `
+    SELECT *
+    FROM inventory
+    WHERE lower(name)
+    LIKE '%${term}%'
+    OR lower(description)
+    LIKE '%${term}%'
+  `
+  return db.any(sql)
+}
+
 const getItemDetailsById = function(id){
   const sql = `
     SELECT * FROM inventory WHERE id=$1;
