@@ -38,7 +38,7 @@ const displayItemsByCategory = function(category){
 }
 
 const searchItem = function(searchItem) {
-  const term = searchItem.toLowerCase()
+  const term = searchItem
   const sql = `
     SELECT *
     FROM inventory

@@ -17,6 +17,7 @@ app.use(bodyParser())
 
 const admin = require('./routes/admin.js')
 const index = require('./routes/index.js')
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(session({ secret: 'iloveshakashakashaka' }))
 app.use(passport.initialize())
@@ -29,7 +30,6 @@ const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
-app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', index)
 app.use('/admin', admin)
