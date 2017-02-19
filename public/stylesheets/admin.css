@@ -44,6 +44,7 @@ body {
 .tabs {
   width: 100%;
   display:inline-block;
+  margin-top: 30px;
 }
 
 .tab-links:after {

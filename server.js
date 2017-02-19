@@ -11,10 +11,14 @@ const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const env = require('dotenv').config()
 
+const router = express.Router
+
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(morgan('dev'))
 app.use(cookieParser())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser())
 
 const admin = require('./routes/admin.js')
@@ -35,6 +39,8 @@ app.set('view engine', 'pug')
 app.use('/', index)
 app.use('/admin', admin)
 
-app.listen(process.env.PORT || 2782, function(){
+const server = app.listen(process.env.PORT || 2782, function(){
   console.log('listening on port 2782')
 })
+
+module.exports = server
