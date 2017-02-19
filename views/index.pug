@@ -3,15 +3,16 @@ extends layout
 block content
 
   .homepage-section
+    include navbar.pug
+  .homepage-section
     .homepage-body-header
       h1 Funny Bone
-
-  .homepage-section
-    include navbar.pug
   .homepage-section
     .homepage-body-content
       .homepage-image
-        img(src="./images/logo.png")
-
+        img(src="./images/blackhat.png")
+        img(src="./images/threads1.png")
+        img(src="./images/threads.png")
   .homepage-section
-    include footer.pug
+    .color-block-2
+      a(class='color-block-button' href='https://shakalee14.github.io/') Created by Shaka Lee

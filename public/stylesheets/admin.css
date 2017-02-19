@@ -4,12 +4,6 @@ body {
   margin-bottom: 25px;
 }
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.5em;
-}
-
 .footer button {
   width: 100px;
   height: 40px;
@@ -22,9 +16,10 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-decoration: none;
   font-size: 1.5em;
+  margin-top: 7%;
 }
 
 .navbar a {
@@ -34,9 +29,6 @@ body {
 
 .homepage-section {
   color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .homepage-body-content {
@@ -47,11 +39,6 @@ body {
 
 .homepage-body-header {
   font-size: 2em;
-}
-
-.homepage-section * {
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .tabs {

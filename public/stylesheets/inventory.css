@@ -59,7 +59,7 @@ input {
   width: 70%;
   height: 2rem;
   background: #ecf0f1;
-  margin: 2%;
+  margin: 10%;
   padding: 1%;
 }
 
@@ -81,7 +81,6 @@ input {
   left: 50%;
   transform: translate(-50%,-50%);
   width: 400px;
-  height: 700px;
   background: #fff;
   box-shadow: 0 0 0 1000em rgba(0,0,0,.5);
 }

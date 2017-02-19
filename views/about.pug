@@ -2,27 +2,40 @@ extends layout
 
 block content
 
-  .section-about
-    | Pep Marie
-    p
-      | from: phillyjawn
-      br
-      |  these days: fighting for community control of our schools
-      br
-      | in this moment: we have to go hard towards our vision for the world
-      br
-      |  looking ahead: telling the true story of OUR neighborhoods
+  .section-contact
+    include navbar.pug
 
-  .section-about
-    img(src='./images/pephannah.png')
-      
-  .section-about
-    | Hannah Elhard
-    p
-      | from: Small town Ohio
-      br
-      | these days: teacher and organizer
-      br
-      | in this moment : We have an imperative to view our lives and the way we take care of each other more creatively and with greater responsibility.
-      br
-      | looking ahead: creating more genuine self-expression opportunities for children.
+  .section-contact
+    .section-about
+      | Pep Marie 👾 (@mrshebedat)
+      p
+        | from: phillyjawn
+        br
+        |  these days: fighting for community control of our schools
+        br
+        | in this moment: we have to go hard towards our vision for the world
+        br
+        |  looking ahead: telling the true story of OUR neighborhoods
+
+    .section-about
+      img(src='./images/pephannah.png')
+
+    .section-about
+      | Hannah Elhard 👽 (@hannywannywoo)
+      p
+        | from: Small town Ohio
+        br
+        | these days: teacher and organizer
+        br
+        | in this moment : We have an imperative to view our lives and the way we take care of each other more creatively and with greater responsibility.
+        br
+        | looking ahead: creating more genuine self-expression opportunities for children.
+
+
+  .section-contact
+    p email us: funnybonedesign@gmail.com
+    a(href='mailto:funnybonedesign@gmail.com')
+      img(class="icon" src='https://emojidictionary.emojifoundation.com/img/emoji498.jpg')
+    p follow us on instagram: instagram.com/funnybonedesign
+    a(href='https://instagram.com/funnybonedesign' rel='outside')
+      img(class="icon" src='https://img.clipartfest.com/37452bef6cb2f1d051c709292e253870_instagram-icon-instagram-app-icon-clipart_236-236.jpeg')
