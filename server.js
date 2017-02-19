@@ -11,13 +11,14 @@ const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const env = require('dotenv').config()
 
+app.use(express.static(path.join(__dirname, 'public')))
+
 app.use(morgan('dev'))
 app.use(cookieParser())
 app.use(bodyParser())
 
 const admin = require('./routes/admin.js')
 const index = require('./routes/index.js')
-app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(session({ secret: 'iloveshakashakashaka' }))
 app.use(passport.initialize())
