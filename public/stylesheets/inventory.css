@@ -105,3 +105,42 @@ input {
   text-decoration: underline;
   font-size: 110%;
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px)
+and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71) {
+   .homepage-image {
+      text-align: center;
+      display: block;
+      width: 80%;
+   }
+
+   .homepage-image img {
+      margin: 10px auto;
+      width: 160px;
+      height: 160px;
+   }
+
+   .color-block-2 {
+      display: none;
+   }
+
+   .navbar {
+      margin-top: 20%;
+      font-size: 24px;
+   }
+
+   .section-about p {
+      font-size: 80%;
+   }
+
+   .inventory-item {
+      padding: 10px;
+      margin: 10px;
+   }
+
+   .inventory-pic {
+      width: 200px;
+      height: auto;
+   }
+
+}
