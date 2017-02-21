@@ -47,8 +47,8 @@ and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71) {
 
    .homepage-image img {
       margin: 10px auto;
-      width: 120px;
-      height: 120px;
+      width: 200px;
+      height: 200px;
    }
 
    .color-block-2 {
@@ -56,8 +56,8 @@ and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71) {
    }
 
    .navbar {
-      margin-top: 20%;
-      font-size: 24px;
+      margin-top: 50px;
+      font-size: 20px;
    }
 
    .section-about p {
@@ -65,11 +65,22 @@ and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71) {
    }
 
    .inventory-item {
-      padding: 0;
-      margin: 0;
+      padding: 10px;
+      margin: 10px;
    }
 
-   .inventory-pic {
-      width: 100px;
+   .inventory-pic, .inventory-pic-modal {
+      width: 200px;
       height: auto;
+   }
+
+   .inventory-details-modal {
+      border-top: 2px solid grey;
+      border-bottom: 2px solid grey;
+      height: auto;
+      width: 300px;
+   }
+
+   .section-inventory {
+      font-size: 16px;
    }
