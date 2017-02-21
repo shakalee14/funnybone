@@ -7,6 +7,10 @@ router.get('/', function(request, response){
   response.render('index')
 })
 
+router.get('/donate', function(request, response){
+  response.render('donate')
+})
+
 router.get('/all', function(request, response){
   db.displayInventoryItems()
     .then( results => {
