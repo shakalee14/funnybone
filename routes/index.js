@@ -23,7 +23,7 @@ router.get('/contact', function(request, response){
 })
 
 router.get('/apparel', function(request, response){
-  db.displayItemsByCategory('threads')
+  db.displayInventoryItems()
     .then( results => {
       response.render('threads', {results})
     })
@@ -54,7 +54,7 @@ router.post('/archive/:id', function(request, response){
 
 router.get('/search', function(request, response){
   const { searchItem } = request.query
-  
+
   db.searchItem(searchItem)
     .then( results => response.render('inventory', {results}))
     .catch(error => response.render('inventory', {error: 'no items match search'}))
